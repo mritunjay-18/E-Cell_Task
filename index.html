@@ -8,19 +8,18 @@
 </head>
 <body>
     <nav>
-        <div class="menu-container">
-            <div class="hamburger" tabindex="0">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <ul class="nav">
-                <li><a href="second.html">Home</a></li>
-                <li><a href="index.html">Grid</a></li>
-                <li><a href="https://www.linkedin.com/in/mritunjay-rai-10b7a4324" target="_blank">LinkedIn</a></li>
+        <ul class="sidebar">
+            <li id="symbol" onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="second.html">Home</a></li>
+            <li><a href="index.html">Grid</a></li>
+            <li><a href="https://www.linkedin.com/in/mritunjay-rai-10b7a4324" target="_blank">LinkedIn</a></li>
+        </ul>
+            <ul>
+                <li class="hideOnMobile"><a href="second.html">Home</a></li>
+                <li class="hideOnMobile"><a href="index.html">Grid</a></li>
+                <li class="hideOnMobile"><a href="https://www.linkedin.com/in/mritunjay-rai-10b7a4324" target="_blank">LinkedIn</a></li>
+                <li class="menu-button" id="symbol" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="25px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
             </ul>
-        </div>
     </nav>
     <main class="container">
         <div class="box gradient"></div>
@@ -42,6 +41,16 @@
         </div>
     </main>
     <script>
+        function showSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+
             document.addEventListener("DOMContentLoaded", () => {
         const squares = document.querySelectorAll(".square");
         const lastSquare = document.getElementById("last-square");
