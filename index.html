@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="menu-container">
+            <div class="hamburger" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav">
+                <li><a href="second.html">Home</a></li>
+                <li><a href="index.html">Grid</a></li>
+                <li><a href="https://www.linkedin.com/in/mritunjay-rai-10b7a4324" target="_blank">LinkedIn</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container">
+        <div class="box gradient"></div>
+        <div class="box logo">
+            <img src="e-cell logo.png" alt="E-cell Logo">
+        </div>
+        <div class="box grid-container">
+            <div class="grid">
+                <div class="square" ></div>
+                <div class="square" ></div>
+                <div class="square" ></div>
+                <div class="square" ></div>
+                <div class="square" ></div>
+                <div class="square" ></div>
+                <div class="square" ></div>
+                <div class="square" ></div>
+                <div class="square" id="last-square"></div>
+            </div>
+        </div>
+    </main>
+    <script>
+            document.addEventListener("DOMContentLoaded", () => {
+        const squares = document.querySelectorAll(".square");
+        const lastSquare = document.getElementById("last-square");
+        let clickSequence = [];
+
+        squares.forEach((square, index) => {
+            square.addEventListener("click", () => {
+                if (square !== lastSquare) {
+                    square.style.backgroundColor = "red";
+                    clickSequence.push(index);
+                } else {
+                    clickSequence.forEach((i) => {
+                        squares[i].style.backgroundColor = "blue";
+                    });
+                    clickSequence = [];
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
